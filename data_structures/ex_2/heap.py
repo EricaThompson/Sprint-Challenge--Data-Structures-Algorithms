@@ -1,15 +1,31 @@
+# def heapsort(arr):
+#   end = len(arr)
+#   start = end // 2 - 1
+#   new_array = []
+#   for each in range(start, -1, -1):
+#     _max_child(end, each)
+
+#   for each in range(end-1, 0, -1):
+#     arr[each], arr[0] = arr[0], arr[each]
+#     new_array.append(arr[each])
+
+#   return new_array
+
 def heapsort(arr):
-  end = len(arr)
-  start = end // 2 - 1
-  new_array = []
-  for each in range(start, -1, -1):
-    _max_child(end, each)
+  head = Heap()
+  sorted = [0 for _ in len(arr)]
+  sorted = [0] * len(arr)
 
-  for each in range(end-1, 0, -1):
-    arr[each], arr[0] = arr[0], arr[each]
-    new_array.append(arr[each])
+  for el in arr:
+    heap.insert(el)
 
-  return new_array
+  for i in range(len(arr)):
+    sorted[len(arr) - i - 1] = heap.delete()
+
+  return sorted
+
+
+
 
 class Heap:
   def __init__(self):

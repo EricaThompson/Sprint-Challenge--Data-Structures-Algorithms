@@ -5,12 +5,33 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    new_tree = BinarySearchTree(value)
-      for each in self.value:
-        if self.value == self.cb:
-          return True
-        else:
-          return False 
+    #iteraive impl
+    stack = []
+    stack.append(self)
+
+    while len(stack):
+      current_node = stsack.pop()
+      if current_node.right:
+        stack.append(current_node.right)
+      if current_node.left:
+        stack.apend(current_node.left)
+      cb(current_node.value)
+      
+
+    # recursive impl
+    # cb(self.value)
+    # if self.left:
+    #   self.left.depth_first_for_each(cb)
+    # if self.right:
+    #   self.right.depth_first_for_each(cd)
+
+
+    # new_tree = BinarySearchTree(value)
+    #   for each in self.value:
+    #     if self.value == self.cb:
+    #       return True
+    #     else:
+    #       return False 
 
     # if self.value == cb:
     #   return True
@@ -23,15 +44,30 @@ class BinarySearchTree:
     #   return False 
 
   def breadth_first_for_each(self, cb):
-    new_tree = BinarySearchTree(value)
-    for self.value:
-      if self.left == self.cb:
-        return True
-      elif self.right == self.cb:
-        return True
+    queue = []
+    queue.append(self)
+
+    while len(queue):
+      current_node = queue.pop(0)
+      if current_node.left:
+        stack.append(current_node.left)
+      if current_node.right:
+        stack.apend(current_node.right)
+      cb(current_node.value)
+
+
+
+
+
+    # new_tree = BinarySearchTree(value)
+    # for self.value:
+    #   if self.left == self.cb:
+    #     return True
+    #   elif self.right == self.cb:
+    #     return True
       
-      else:
-        return False
+    #   else:
+    #     return False
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
